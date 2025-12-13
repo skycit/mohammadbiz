@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1" stroke="#6366f1" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="#6366f1" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="200" fill="#8b5cf6" opacity="0.1"/>
+  
+  <!-- Logo/Initials -->
+  <rect x="80" y="240" width="120" height="120" rx="24" fill="url(#textGrad)"/>
+  <text x="140" y="320" text-anchor="middle" font-family="system-ui, sans-serif" font-size="64" font-weight="700" fill="white">MK</text>
+  
+  <!-- Main text -->
+  <text x="240" y="290" font-family="system-ui, sans-serif" font-size="56" font-weight="700" fill="white">Mohammad Keshtkar</text>
+  <text x="240" y="350" font-family="system-ui, sans-serif" font-size="28" fill="#94a3b8">Privacy-First Entrepreneur</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="480" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#cbd5e1">Building privacy-preserving applications with Blockchain &amp; AI</text>
+  
+  <!-- Tags -->
+  <g font-family="system-ui, sans-serif" font-size="16" fill="#a78bfa">
+    <text x="350" y="540">Blockchain</text>
+    <text x="500" y="540">Privacy Tech</text>
+    <text x="660" y="540">Prediction Markets</text>
+    <text x="860" y="540">AI/ML</text>
+  </g>
+</svg>

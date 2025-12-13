@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.3"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.1" stroke="#6366f1" stroke-width="0.5">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="700" y1="0" x2="700" y2="600"/>
+  </g>
+  
+  <!-- Connection lines between blocks -->
+  <g stroke="url(#lineGrad)" stroke-width="3" filter="url(#softGlow)">
+    <!-- Central connections -->
+    <line x1="400" y1="300" x2="250" y2="180"/>
+    <line x1="400" y1="300" x2="550" y2="180"/>
+    <line x1="400" y1="300" x2="250" y2="420"/>
+    <line x1="400" y1="300" x2="550" y2="420"/>
+    <!-- Outer connections -->
+    <line x1="250" y1="180" x2="120" y2="120"/>
+    <line x1="550" y1="180" x2="680" y2="120"/>
+    <line x1="250" y1="420" x2="120" y2="480"/>
+    <line x1="550" y1="420" x2="680" y2="480"/>
+    <!-- Cross connections -->
+    <line x1="250" y1="180" x2="550" y2="180" opacity="0.5"/>
+    <line x1="250" y1="420" x2="550" y2="420" opacity="0.5"/>
+  </g>
+  
+  <!-- Blockchain nodes/blocks -->
+  <!-- Central node -->
+  <g filter="url(#glow)">
+    <rect x="360" y="260" width="80" height="80" rx="12" fill="url(#nodeGrad)"/>
+    <rect x="370" y="270" width="60" height="60" rx="8" fill="none" stroke="white" stroke-opacity="0.3" stroke-width="2"/>
+    <text x="400" y="308" text-anchor="middle" fill="white" font-family="monospace" font-size="14" font-weight="bold">CORE</text>
+  </g>
+  
+  <!-- Top left node -->
+  <g filter="url(#glow)">
+    <rect x="210" y="140" width="80" height="80" rx="12" fill="url(#nodeGrad)" opacity="0.9"/>
+    <path d="M250 160 L270 175 L250 190 L230 175 Z" fill="none" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="250" y="205" text-anchor="middle" fill="white" font-family="monospace" font-size="10">DATA</text>
+  </g>
+  
+  <!-- Top right node -->
+  <g filter="url(#glow)">
+    <rect x="510" y="140" width="80" height="80" rx="12" fill="url(#nodeGrad)" opacity="0.9"/>
+    <circle cx="550" cy="170" r="15" fill="none" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="550" y="205" text-anchor="middle" fill="white" font-family="monospace" font-size="10">TRUST</text>
+  </g>
+  
+  <!-- Bottom left node -->
+  <g filter="url(#glow)">
+    <rect x="210" y="380" width="80" height="80" rx="12" fill="url(#nodeGrad)" opacity="0.9"/>
+    <rect x="235" y="395" width="30" height="30" rx="4" fill="none" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="250" y="445" text-anchor="middle" fill="white" font-family="monospace" font-size="10">SECURE</text>
+  </g>
+  
+  <!-- Bottom right node -->
+  <g filter="url(#glow)">
+    <rect x="510" y="380" width="80" height="80" rx="12" fill="url(#nodeGrad)" opacity="0.9"/>
+    <polygon points="550,395 565,420 535,420" fill="none" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="550" y="445" text-anchor="middle" fill="white" font-family="monospace" font-size="10">CHAIN</text>
+  </g>
+  
+  <!-- Corner small nodes -->
+  <circle cx="120" cy="120" r="25" fill="url(#nodeGrad)" opacity="0.7" filter="url(#softGlow)"/>
+  <circle cx="680" cy="120" r="25" fill="url(#nodeGrad)" opacity="0.7" filter="url(#softGlow)"/>
+  <circle cx="120" cy="480" r="25" fill="url(#nodeGrad)" opacity="0.7" filter="url(#softGlow)"/>
+  <circle cx="680" cy="480" r="25" fill="url(#nodeGrad)" opacity="0.7" filter="url(#softGlow)"/>
+  
+  <!-- Floating particles -->
+  <circle cx="180" cy="250" r="4" fill="#8b5cf6" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="620" cy="350" r="4" fill="#6366f1" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="150" r="3" fill="#a78bfa" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="450" r="3" fill="#a78bfa" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Binary/data streams -->
+  <text x="70" y="300" fill="#6366f1" opacity="0.3" font-family="monospace" font-size="10">01101</text>
+  <text x="720" y="250" fill="#6366f1" opacity="0.3" font-family="monospace" font-size="10">10110</text>
+  <text x="300" y="550" fill="#6366f1" opacity="0.3" font-family="monospace" font-size="10">11001</text>
+  <text x="480" y="70" fill="#6366f1" opacity="0.3" font-family="monospace" font-size="10">01010</text>
+</svg>
