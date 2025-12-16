@@ -125,11 +125,11 @@ export default function Home() {
                 src="/education/imperial-hero.png"
                 alt="Imperial College London campus"
                 fill
-                className="object-cover opacity-30"
+                className="object-cover opacity-50"
                 sizes="100vw"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/85 to-indigo-50/70" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/80 to-indigo-50/70" />
             </div>
             <div className="relative grid md:grid-cols-2 gap-8 items-center p-8">
               <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-md bg-white/70 border border-white/60">
@@ -138,9 +138,10 @@ export default function Home() {
                   alt="Imperial College London Business School"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="relative backdrop-blur-sm bg-white/80 rounded-xl p-6 border border-white/60 shadow-sm">
+              <div className="relative backdrop-blur-sm bg-white/85 rounded-xl p-6 border border-white/60 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">🎓</span>
                   <div>
@@ -221,7 +222,7 @@ export default function Home() {
           <div className="space-y-12">
             <div className="bg-white rounded-2xl shadow-lg border border-indigo-100 overflow-hidden ring-1 ring-indigo-50">
               <div className="grid lg:grid-cols-2 items-stretch">
-                <div className="p-8 lg:p-10 order-2 lg:order-1 flex flex-col gap-4 justify-center h-full">
+                <div className="p-8 lg:p-10 order-2 lg:order-1 flex flex-col gap-4 justify-center h-full lg:min-h-[420px]">
                   <div className="flex items-center justify-between gap-4 flex-wrap">
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-1">Privacy-Preserving Prediction Market</h3>
@@ -257,7 +258,7 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-                <div className="relative min-h-[300px] lg:min-h-[420px] bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-800 order-1 lg:order-2">
+                <div className="relative min-h-[320px] lg:min-h-[420px] bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-800 order-1 lg:order-2">
                   <Image
                     src="/projects/perblock-blockchain.svg"
                     alt="PerBlock Blockchain Technology"
@@ -276,7 +277,7 @@ export default function Home() {
 
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
               <div className="grid lg:grid-cols-2 items-stretch">
-                <div className="relative min-h-[280px] lg:min-h-[420px] bg-gray-100">
+                <div className="relative min-h-[320px] lg:min-h-[420px] bg-gray-100">
                   <Image
                     src="/projects/anybet-hero.png"
                     alt="AnyBet homepage preview"
@@ -286,7 +287,7 @@ export default function Home() {
                     priority
                   />
                 </div>
-                <div className="p-8 lg:p-10 flex flex-col justify-center h-full gap-4">
+                <div className="p-8 lg:p-10 flex flex-col justify-center h-full gap-4 lg:min-h-[420px]">
                   <div className="flex items-center justify-between gap-4 flex-wrap">
                     <h3 className="text-2xl font-semibold text-gray-900">AnyBet</h3>
                     <a
@@ -332,7 +333,7 @@ export default function Home() {
 
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
               <div className="grid lg:grid-cols-2 items-stretch">
-                <div className="relative min-h-[280px] lg:min-h-[420px] bg-gray-100 lg:order-2">
+                <div className="relative min-h-[320px] lg:min-h-[420px] bg-gray-100 lg:order-2">
                   <Image
                     src="/projects/vetcast-hero.png"
                     alt="VetCast homepage preview"
@@ -341,7 +342,7 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                <div className="p-8 lg:p-10 lg:order-1 flex flex-col justify-center h-full gap-4">
+                <div className="p-8 lg:p-10 lg:order-1 flex flex-col justify-center h-full gap-4 lg:min-h-[420px]">
                   <div className="flex items-center justify-between gap-4 flex-wrap">
                     <h3 className="text-2xl font-semibold text-gray-900">VetCast</h3>
                     <a
@@ -385,8 +386,8 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-              <div className="grid lg:grid-cols-2">
-                <div className="relative min-h-[280px] lg:min-h-[420px] bg-gray-100">
+              <div className="grid lg:grid-cols-2 items-stretch">
+                <div className="relative min-h-[320px] lg:min-h-[420px] bg-gray-100">
                   <Image
                     src="/projects/tastypot-hero.png"
                     alt="TastyPot homepage preview"
@@ -395,7 +396,7 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                <div className="p-8 lg:p-10">
+                <div className="p-8 lg:p-10 flex flex-col justify-center h-full gap-4 lg:min-h-[420px]">
                   <div className="flex items-center justify-between gap-4 flex-wrap">
                     <h3 className="text-2xl font-semibold text-gray-900">TastyPot</h3>
                     <a
