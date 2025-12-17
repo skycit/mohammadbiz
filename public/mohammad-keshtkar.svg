@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Portrait illustration of Mohammad Keshtkar">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#6477ff" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#6477ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#6477ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)" rx="48"/>
+  <rect width="900" height="1200" fill="url(#glow)"/>
+  <g transform="translate(180 160)">
+    <ellipse cx="270" cy="360" rx="300" ry="260" fill="#fff" opacity="0.06"/>
+    <ellipse cx="270" cy="360" rx="250" ry="210" fill="#fff" opacity="0.08"/>
+  </g>
+  <g transform="translate(220 220)">
+    <path d="M200 460c10-120 160-120 200 0l10 220c-70 110-150 120-220 0z" fill="#dcdfe6"/>
+    <path d="M255 470c-60 40-40 120-30 180-60-80-80-200 30-180z" fill="#cdd0d8"/>
+    <path d="M355 470c70 30 70 110 55 175 60-70 60-190-55-175z" fill="#cdd0d8"/>
+    <path d="M270 500c30 40 100 40 140 0l-70 140z" fill="#c7cad2"/>
+    <path d="M180 560c80-40 170-40 250 0l-40 60c-60-20-120-20-180 0z" fill="#bfc3cd"/>
+    <path d="M260 360c0-40 30-70 80-70s80 30 80 70-30 70-80 70-80-30-80-70z" fill="#e8c8a5"/>
+    <path d="M240 360c5-70 35-120 120-120s110 50 115 120c-35 20-95 30-175 0z" fill="#1f2430"/>
+    <circle cx="300" cy="360" r="14" fill="#fff"/>
+    <circle cx="360" cy="360" r="14" fill="#fff"/>
+    <circle cx="300" cy="360" r="6" fill="#141821"/>
+    <circle cx="360" cy="360" r="6" fill="#141821"/>
+    <path d="M300 395c10 18 40 18 60 0" stroke="#6b4336" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M305 420h50" stroke="#5a3328" stroke-width="7" stroke-linecap="round"/>
+    <path d="M270 335c30-45 120-45 150 0" stroke="#111827" stroke-width="24" stroke-linecap="round" fill="none"/>
+  </g>
+  <g transform="translate(470 120)">
+    <rect x="0" y="0" width="320" height="130" rx="40" fill="#ffffff0f" stroke="#a6b8ff" stroke-width="2"/>
+    <text x="24" y="60" fill="#d6ddff" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="42">Mohammad</text>
+    <text x="24" y="110" fill="#b0c2ff" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="42">Keshtkar</text>
+  </g>
+</svg>
