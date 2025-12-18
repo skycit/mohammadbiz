@@ -1,9 +1,0 @@
-# robots.txt for mohammad.biz
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://mohammad.biz/sitemap.xml
-
-# Crawl-delay (optional, for politeness)
-Crawl-delay: 1

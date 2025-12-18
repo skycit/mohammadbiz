@@ -6,6 +6,21 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Patent Summary — Privacy-Preserving Verification',
   description: 'High-level overview of the EPO-confirmed patent for privacy-preserving verification. Enables anonymous eligibility checks without wallet linking.',
+  alternates: {
+    canonical: '/patent-summary',
+  },
+  openGraph: {
+    title: 'EPO Patent for Privacy-Preserving Verification — Mohammad Keshtkar',
+    description: 'Anonymous verification patent enabling wallet-free blockchain onboarding and privacy-preserving KYC compliance.',
+    url: 'https://mohammad.biz/patent-summary',
+    images: ['/og-patent.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EPO Patent for Privacy-Preserving Verification',
+    description: 'Anonymous verification patent enabling wallet-free blockchain onboarding and privacy-preserving KYC compliance.',
+    images: ['/og-patent.png'],
+  },
 };
 
 export default function PatentSummary() {

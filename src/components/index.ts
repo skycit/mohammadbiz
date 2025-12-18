@@ -5,3 +5,5 @@ export { default as PatentMoat } from './PatentMoat';
 export { default as Projects } from './Projects';
 export { default as NowLookingFor } from './NowLookingFor';
 export { default as Contact } from './Contact';
+export { default as FAQ } from './FAQ';
+export { PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd, FAQPageJsonLd, ProjectJsonLd } from './SeoJsonLd';

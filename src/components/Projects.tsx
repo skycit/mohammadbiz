@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight, ExternalLink, Rocket } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, ExternalLink, Rocket, FileText } from 'lucide-react';
 import { projects } from '@/content/site';
 
 export default function Projects() {
@@ -104,7 +105,7 @@ export default function Projects() {
                     <div className="relative min-h-[280px] lg:min-h-[320px] bg-slate-900 overflow-hidden group flex items-center justify-center">
                       <Image
                         src={project.screenshot}
-                        alt={`${project.name} preview`}
+                        alt={project.screenshotAlt || `${project.name} preview`}
                         fill
                         className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                         sizes="(max-width: 1024px) 100vw, 50vw"
@@ -174,6 +175,13 @@ export default function Projects() {
                         >
                           {project.ctaSecondary.label}
                         </button>
+                        <Link
+                          href={`/projects/${project.id}`}
+                          className="px-5 py-3 text-gray-600 hover:text-gray-900 font-medium inline-flex items-center justify-center gap-1 transition-colors"
+                        >
+                          <FileText size={16} />
+                          Case study
+                        </Link>
                       </div>
                     </div>
                   </div>

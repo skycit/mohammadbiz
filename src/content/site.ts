@@ -7,7 +7,7 @@ export const siteConfig = {
   email: 'hello@mohammad.biz',
   location: 'London, UK',
   social: {
-    linkedin: 'https://linkedin.com/in/mohammadkeshtkar',
+    linkedin: 'https://www.linkedin.com/in/mohammad-blockchain/',
     twitter: 'https://twitter.com/perblock_io',
   },
 };
@@ -100,6 +100,7 @@ export const projects = [
     whatsNext: 'Seeking pre-seed funding and design partners for private beta.',
     tags: ['Blockchain', 'Privacy', 'Zero-knowledge', 'Prediction markets'],
     screenshot: '/projects/perblock-blockchain.svg',
+    screenshotAlt: 'Privacy-preserving prediction market architecture showing anonymous verification flow, zero-knowledge proofs, and blockchain integration for wallet-free onboarding',
     url: null,
     ctaPrimary: { label: 'Request demo', href: '#contact', subject: 'Flagship Demo Request' },
     ctaSecondary: { label: 'Ask about the build', href: '#contact', subject: 'Flagship Technical Questions' },
@@ -116,6 +117,7 @@ export const projects = [
     whatsNext: 'Expanding markets and refining UX based on user research.',
     tags: ['Live odds', 'Virtual tokens', 'Leaderboard', 'Web app'],
     screenshot: '/anybet-new.jpg',
+    screenshotAlt: 'AnyBet sports betting web application interface displaying live football odds, betting slip with virtual tokens, and user leaderboard rankings',
     url: 'https://anybet.ai',
     ctaPrimary: { label: 'Visit AnyBet', href: 'https://anybet.ai', external: true },
     ctaSecondary: { label: 'Ask about the build', href: '#contact', subject: 'AnyBet Questions' },
@@ -132,6 +134,7 @@ export const projects = [
     whatsNext: 'Adding integrations and refining prioritization algorithms.',
     tags: ['AI assistant', 'Request filtering', 'Prioritization', 'Productivity'],
     screenshot: '/vetcast-new.jpg',
+    screenshotAlt: 'VetCast AI assistant dashboard showing filtered connection requests with priority scores, sender analysis, and AI-generated relevance summaries',
     url: 'https://vetcast.ai',
     ctaPrimary: { label: 'Visit VetCast', href: 'https://vetcast.ai', external: true },
     ctaSecondary: { label: 'Ask about the build', href: '#contact', subject: 'VetCast Questions' },
@@ -148,6 +151,7 @@ export const projects = [
     whatsNext: 'Onboarding partner restaurants and refining reward mechanics.',
     tags: ['Cashback', 'Community pool', 'Hospitality', 'Gamification'],
     screenshot: '/tastypot-new.jpg',
+    screenshotAlt: 'TastyPot hospitality rewards interface displaying community money pot progress, shared cashback contributions, and unlockable surprise rewards',
     url: 'https://tastypot.uk',
     ctaPrimary: { label: 'Visit TastyPot', href: 'https://tastypot.uk', external: true },
     ctaSecondary: { label: 'Ask about the build', href: '#contact', subject: 'TastyPot Questions' },
@@ -178,6 +182,41 @@ export const nowLookingFor = [
     description: 'Technical or commercial builders excited about privacy, blockchain, and AI.',
     cta: { label: 'Explore fit', href: '#contact', subject: 'Co-founder Interest' },
     icon: 'Users',
+  },
+];
+
+export const faqContent = [
+  {
+    question: 'What is a privacy-preserving prediction market?',
+    answer: 'A privacy-preserving prediction market allows users to make forecasts and trade on outcomes without exposing their identity. Using techniques like zero-knowledge proofs, participants can verify they meet eligibility requirements (age, location, compliance) without revealing personal data or linking cryptocurrency wallets.',
+  },
+  {
+    question: 'How does Mohammad Keshtkar\'s blockchain and AI work combine?',
+    answer: 'Mohammad combines blockchain for trust and transparency with AI for intelligent insights. Blockchain provides immutable records and decentralized verification, while AI enhances user experience through smart filtering, prediction assistance, and automated analysis — all while preserving privacy.',
+  },
+  {
+    question: 'What is the EPO patent for anonymous verification?',
+    answer: 'The European Patent Office (EPO) confirmed patent enables users to prove eligibility or verification status without exposing personal identity. This technology allows wallet-free onboarding to blockchain services, anonymous compliance checks, and privacy-preserving KYC that meets regulatory requirements.',
+  },
+  {
+    question: 'What is TastyPot and how does the community pool work?',
+    answer: 'TastyPot is a hospitality rewards platform where diners contribute to a shared money pot with each visit. When the pot reaches milestones, everyone who contributed unlocks surprises like free dishes, exclusive experiences, or charitable donations. It transforms individual loyalty into community engagement.',
+  },
+  {
+    question: 'How does AnyBet work without real money?',
+    answer: 'AnyBet provides a complete sports betting experience using virtual tokens. Users get real-time odds from actual markets, can place bets, track results, and compete on leaderboards — all without financial risk. It\'s designed for learning betting mechanics and entertainment.',
+  },
+  {
+    question: 'What does VetCast do for connection requests?',
+    answer: 'VetCast uses AI to filter and prioritize inbound business and social connection requests. It analyzes message content, sender profiles, and context to score each request, helping busy professionals focus on high-value connections while deprioritizing spam and noise.',
+  },
+  {
+    question: 'Is Mohammad Keshtkar open to investment or partnerships?',
+    answer: 'Yes. Mohammad is actively seeking pre-seed investors for the privacy-preserving prediction market, strategic partners for pilot programs, mentors with relevant domain expertise, and potential co-founders passionate about privacy, blockchain, and AI.',
+  },
+  {
+    question: 'What is Mohammad Keshtkar\'s background?',
+    answer: 'Mohammad holds degrees in Physics, IT Engineering, and Computer Science Research, plus an MSc in Innovation, Entrepreneurship & Management from Imperial College London Business School. He has 8+ years of experience building and shipping web products as a full-stack technical founder.',
   },
 ];
 

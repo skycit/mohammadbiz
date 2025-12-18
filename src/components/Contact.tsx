@@ -18,7 +18,10 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const mailtoLink = `mailto:${contactContent.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-    window.open(mailtoLink, '_blank');
+    // Create temporary anchor and click it - most reliable cross-browser mailto handling
+    const anchor = document.createElement('a');
+    anchor.href = mailtoLink;
+    anchor.click();
   };
 
   return (
