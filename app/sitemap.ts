@@ -1,44 +1,42 @@
 import type { MetadataRoute } from 'next';
+import { projects } from '@/content/site';
+
+const BASE_URL = 'https://mohammad.biz';
+
+// Build timestamp for routes without specific lastModified
+const BUILD_TIME = new Date();
+
+// Map project IDs from site.ts to actual route slugs
+// 'flagship' project uses 'prediction-market' as its route
+function getProjectSlug(projectId: string): string {
+  if (projectId === 'flagship') return 'prediction-market';
+  return projectId;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mohammad.biz';
-  
-  return [
+  // Static routes with their priorities and change frequencies
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      url: BASE_URL,
+      lastModified: BUILD_TIME,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/patent-summary`,
-      lastModified: new Date(),
+      url: `${BASE_URL}/patent-summary`,
+      lastModified: BUILD_TIME,
       changeFrequency: 'monthly',
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/projects/prediction-market`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/projects/anybet`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/vetcast`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects/tastypot`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
   ];
+
+  // Dynamic project routes derived from the projects data source
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${BASE_URL}/projects/${getProjectSlug(project.id)}`,
+    lastModified: BUILD_TIME,
+    changeFrequency: project.isFlagship ? 'weekly' : 'monthly',
+    priority: project.isFlagship ? 0.9 : 0.8,
+  }));
+
+  return [...staticRoutes, ...projectRoutes];
 }

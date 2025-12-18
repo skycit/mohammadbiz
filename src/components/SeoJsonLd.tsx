@@ -1,7 +1,27 @@
-import Script from 'next/script';
 import { siteConfig } from '@/content/site';
 
+// Helper to filter out empty/undefined values from sameAs array
+function filterSameAs(links: (string | undefined | null)[]): string[] {
+  return links.filter((link): link is string => Boolean(link));
+}
+
+// Server-rendered JSON-LD script component
+function JsonLdScript({ id, data }: { id: string; data: object }) {
+  return (
+    <script
+      id={id}
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function PersonJsonLd() {
+  const sameAs = filterSameAs([
+    siteConfig.social.linkedin,
+    siteConfig.social.twitter,
+  ]);
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -10,10 +30,7 @@ export function PersonJsonLd() {
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
-    sameAs: [
-      siteConfig.social.linkedin,
-      siteConfig.social.twitter,
-    ],
+    ...(sameAs.length > 0 && { sameAs }),
     knowsAbout: [
       'Privacy Technology',
       'Blockchain',
@@ -33,14 +50,7 @@ export function PersonJsonLd() {
     },
   };
 
-  return (
-    <Script
-      id="person-jsonld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      strategy="afterInteractive"
-    />
-  );
+  return <JsonLdScript id="person-jsonld" data={schema} />;
 }
 
 export function WebSiteJsonLd() {
@@ -56,17 +66,15 @@ export function WebSiteJsonLd() {
     },
   };
 
-  return (
-    <Script
-      id="website-jsonld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      strategy="afterInteractive"
-    />
-  );
+  return <JsonLdScript id="website-jsonld" data={schema} />;
 }
 
 export function ProfilePageJsonLd() {
+  const sameAs = filterSameAs([
+    siteConfig.social.linkedin,
+    siteConfig.social.twitter,
+  ]);
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
@@ -74,18 +82,11 @@ export function ProfilePageJsonLd() {
       '@type': 'Person',
       name: 'Mohammad Keshtkar',
       url: siteConfig.url,
-      sameAs: [siteConfig.social.linkedin, siteConfig.social.twitter],
+      ...(sameAs.length > 0 && { sameAs }),
     },
   };
 
-  return (
-    <Script
-      id="profilepage-jsonld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      strategy="afterInteractive"
-    />
-  );
+  return <JsonLdScript id="profilepage-jsonld" data={schema} />;
 }
 
 interface ProjectJsonLdProps {
@@ -112,41 +113,5 @@ export function ProjectJsonLd({ name, url, description, applicationCategory, key
     },
   };
 
-  return (
-    <Script
-      id={`project-${name.toLowerCase().replace(/\s+/g, '-')}-jsonld`}
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      strategy="afterInteractive"
-    />
-  );
-}
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-export function FAQPageJsonLd({ faqs }: { faqs: FAQItem[] }) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
-  return (
-    <Script
-      id="faq-jsonld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      strategy="afterInteractive"
-    />
-  );
+  return <JsonLdScript id={`project-${name.toLowerCase().replace(/\s+/g, '-')}-jsonld`} data={schema} />;
 }

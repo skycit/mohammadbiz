@@ -1,5 +1,5 @@
-import { Navigation, Hero, About, PatentMoat, Projects, NowLookingFor, Contact, FAQ, PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd, FAQPageJsonLd } from '@/components';
-import { siteConfig, faqContent } from '@/content/site';
+import { Navigation, Hero, About, PatentMoat, Projects, NowLookingFor, Contact, FAQ, PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd } from '@/components';
+import { siteConfig } from '@/content/site';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -28,7 +28,6 @@ export default function Home() {
       <PersonJsonLd />
       <WebSiteJsonLd />
       <ProfilePageJsonLd />
-      <FAQPageJsonLd faqs={faqContent} />
       
       <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-indigo-50">
         <Navigation />
