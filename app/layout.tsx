@@ -16,10 +16,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://mohammad.biz'),
   title: {
-    default: 'Mohammad Keshtkar | Privacy-First Entrepreneur',
+    default: 'Mohammad Keshtkar — Founder building privacy-preserving verification',
     template: '%s | Mohammad Keshtkar',
   },
-  description: 'Entrepreneur building privacy-preserving applications powered by Blockchain & AI. Creating transparent prediction markets and decentralized solutions that protect user identity while enabling global accessibility.',
+  description: 'Technical founder focused on privacy-preserving verification, blockchain, and AI. EPO-confirmed patent holder. Building trust systems where users prove eligibility without exposing identity.',
   keywords: [
     'Mohammad Keshtkar',
     'Blockchain Entrepreneur',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://mohammad.biz',
-    title: 'Mohammad Keshtkar | Privacy-First Entrepreneur',
-    description: 'Building privacy-preserving applications powered by Blockchain & AI. Focused on prediction markets and transparent solutions that protect user identity.',
+    title: 'Mohammad Keshtkar — Founder building privacy-preserving verification',
+    description: 'Technical founder with EPO-confirmed patent for anonymous verification. Building blockchain, AI, and privacy products.',
     siteName: 'Mohammad Keshtkar',
     images: [
       {
@@ -76,8 +76,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mohammad Keshtkar | Privacy-First Entrepreneur',
-    description: 'Building privacy-preserving applications powered by Blockchain & AI. Focused on prediction markets and transparent solutions.',
+    title: 'Mohammad Keshtkar — Founder building privacy-preserving verification',
+    description: 'Technical founder with EPO-confirmed patent for anonymous verification. Building blockchain, AI, and privacy products.',
     creator: '@perblock_io',
     images: ['/og-image.svg'],
   },

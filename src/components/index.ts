@@ -1,0 +1,7 @@
+export { default as Navigation } from './Navigation';
+export { default as Hero } from './Hero';
+export { default as About } from './About';
+export { default as PatentMoat } from './PatentMoat';
+export { default as Projects } from './Projects';
+export { default as NowLookingFor } from './NowLookingFor';
+export { default as Contact } from './Contact';
