@@ -187,7 +187,7 @@ export const contactContent = {
   hint: "If you're an investor, put 'Deck' in the subject for fastest response.",
   email: siteConfig.email,
   cta: {
-    primary: { label: 'Book an intro', href: 'https://cal.com/mohammadkeshtkar' },
+    primary: { label: 'Book an intro', href: 'https://cal.com/mohammad-keshtkar' },
     secondary: { label: 'Email Mohammad', href: `mailto:${siteConfig.email}` },
   },
   social: siteConfig.social,
