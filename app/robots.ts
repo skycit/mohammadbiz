@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/_next/'],
+        allow: ['/', '/_next/static/', '/_next/image/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://mohammad.biz/sitemap.xml',
