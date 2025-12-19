@@ -26,6 +26,7 @@ export function PersonJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Mohammad Keshtkar',
+    alternateName: ['Mohammadamin Keshtkar', 'Mohammad Amin Keshtkar'],
     jobTitle: 'Founder & Technical Entrepreneur',
     description: siteConfig.description,
     url: siteConfig.url,
@@ -81,6 +82,7 @@ export function ProfilePageJsonLd() {
     mainEntity: {
       '@type': 'Person',
       name: 'Mohammad Keshtkar',
+      alternateName: ['Mohammadamin Keshtkar', 'Mohammad Amin Keshtkar'],
       url: siteConfig.url,
       ...(sameAs.length > 0 && { sameAs }),
     },

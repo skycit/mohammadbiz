@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   description: 'Technical founder with EPO patent for anonymous verification. Building blockchain, AI, and privacy products. Creator of AnyBet, VetCast, TastyPot.',
   keywords: [
     'Mohammad Keshtkar',
+    'Mohammadamin Keshtkar',
+    'Mohammad Amin Keshtkar',
     'privacy-preserving prediction market',
     'blockchain founder',
     'anonymous verification patent',
