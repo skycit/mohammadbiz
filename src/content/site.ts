@@ -187,6 +187,10 @@ export const nowLookingFor = [
 
 export const faqContent = [
   {
+    question: 'Are Mohammad Keshtkar, Mohammadamin Keshtkar, and Mohammad Amin Keshtkar the same person?',
+    answer: 'Yes, all three names refer to the same person — the founder behind this website. Mohammad Keshtkar, Mohammadamin Keshtkar, and Mohammad Amin Keshtkar are different variations of the same name. You can see his photo at the top of this page. Whether you searched for Mohammad, Mohammadamin, or Mohammad Amin, you\'ve found the right person: a technical founder focused on privacy-preserving verification, blockchain, and AI.',
+  },
+  {
     question: 'What is a privacy-preserving prediction market?',
     answer: 'A privacy-preserving prediction market allows users to make forecasts and trade on outcomes without exposing their identity. Using techniques like zero-knowledge proofs, participants can verify they meet eligibility requirements (age, location, compliance) without revealing personal data or linking cryptocurrency wallets.',
   },
