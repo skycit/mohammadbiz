@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
+// Force dynamic rendering - prevents caching
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 // Upstash Redis REST client
 const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL;
 const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
@@ -25,6 +29,10 @@ async function redisCommand(command: string[]) {
   });
   
   const data = await response.json();
+  if (data.error) {
+    console.error('Redis error:', data.error);
+    throw new Error(data.error);
+  }
   return data.result;
 }
 
@@ -91,9 +99,15 @@ export async function POST(request: NextRequest) {
   try {
     // Check if Redis is configured
     if (!UPSTASH_URL || !UPSTASH_TOKEN) {
+      console.error('Redis not configured - missing env vars');
       return NextResponse.json(
         { total: INITIAL_COUNT, week: 0, today: 0, error: 'Redis not configured' },
-        { status: 200 }
+        { 
+          status: 200,
+          headers: {
+            'Cache-Control': 'no-store, no-cache, must-revalidate',
+          }
+        }
       );
     }
     
@@ -124,13 +138,22 @@ export async function POST(request: NextRequest) {
     
     // Get and return counts
     const counts = await getCounts();
-    return NextResponse.json(counts);
+    return NextResponse.json(counts, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+      }
+    });
     
   } catch (error) {
     console.error('Visitor count error:', error);
     return NextResponse.json(
-      { total: INITIAL_COUNT, week: 0, today: 0 },
-      { status: 200 }
+      { total: INITIAL_COUNT, week: 0, today: 0, debug: String(error) },
+      { 
+        status: 200,
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate',
+        }
+      }
     );
   }
 }
@@ -139,19 +162,33 @@ export async function GET() {
   try {
     if (!UPSTASH_URL || !UPSTASH_TOKEN) {
       return NextResponse.json(
-        { total: INITIAL_COUNT, week: 0, today: 0 },
-        { status: 200 }
+        { total: INITIAL_COUNT, week: 0, today: 0, error: 'Redis not configured' },
+        { 
+          status: 200,
+          headers: {
+            'Cache-Control': 'no-store, no-cache, must-revalidate',
+          }
+        }
       );
     }
     
     const counts = await getCounts();
-    return NextResponse.json(counts);
+    return NextResponse.json(counts, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+      }
+    });
     
   } catch (error) {
     console.error('Visitor count error:', error);
     return NextResponse.json(
-      { total: INITIAL_COUNT, week: 0, today: 0 },
-      { status: 200 }
+      { total: INITIAL_COUNT, week: 0, today: 0, debug: String(error) },
+      { 
+        status: 200,
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate',
+        }
+      }
     );
   }
 }
