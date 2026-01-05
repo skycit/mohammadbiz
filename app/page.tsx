@@ -1,4 +1,4 @@
-import { Navigation, Hero, About, PatentMoat, Projects, NowLookingFor, Contact, FAQ, PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd } from '@/components';
+import { Navigation, Hero, About, PatentMoat, Projects, NowLookingFor, Contact, FAQ, VisitorCounter, PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd } from '@/components';
 import { siteConfig } from '@/content/site';
 import type { Metadata } from 'next';
 
@@ -43,6 +43,9 @@ export default function Home() {
         <footer className="bg-gray-50 py-8 border-t border-gray-200">
           <div className="max-w-6xl mx-auto px-6 text-center text-gray-500">
             <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+            <div className="mt-3">
+              <VisitorCounter />
+            </div>
           </div>
         </footer>
       </div>
