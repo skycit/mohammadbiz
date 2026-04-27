@@ -194,9 +194,9 @@ export default function PredictionMarketPage() {
                   <h3 className="font-semibold text-gray-900">AnyBet</h3>
                   <p className="text-gray-600 text-sm mt-1">Risk-free sports betting for learning and engagement</p>
                 </Link>
-                <Link href="/projects/vetcast" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all">
-                  <h3 className="font-semibold text-gray-900">VetCast</h3>
-                  <p className="text-gray-600 text-sm mt-1">AI assistant for filtering connection requests</p>
+                <Link href="/projects/trustpeer" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all">
+                  <h3 className="font-semibold text-gray-900">TrustPeer</h3>
+                  <p className="text-gray-600 text-sm mt-1">AI-matched, pay-to-connect platform for the creator economy</p>
                 </Link>
                 <Link href="/projects/prizely" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all">
                   <h3 className="font-semibold text-gray-900">Prizely</h3>

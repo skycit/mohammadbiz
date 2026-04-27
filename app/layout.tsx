@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: 'Mohammad Keshtkar — Founder building privacy-preserving verification',
     template: '%s — Mohammad Keshtkar',
   },
-  description: 'Technical founder with EPO patent for anonymous verification. Building blockchain, AI, and privacy products. Creator of Prizely, AnyBet, VetCast.',
+  description: 'Technical founder with EPO patent for anonymous verification. Building blockchain, AI, and privacy products. Creator of Prizely, TrustPeer, AnyBet.',
   keywords: [
     'Mohammad Keshtkar',
     'Mohammadamin Keshtkar',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     'blockchain founder',
     'anonymous verification patent',
     'Prizely',
+    'TrustPeer',
     'AnyBet',
-    'VetCast',
     'zero knowledge proofs',
     'privacy technology',
     'prediction markets',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://mohammad.biz',
     title: 'Mohammad Keshtkar — Founder building privacy-preserving verification',
-    description: 'Technical founder with EPO patent. Building Prizely, AnyBet, VetCast, and privacy-preserving prediction markets.',
+    description: 'Technical founder with EPO patent. Building Prizely, TrustPeer, AnyBet, and privacy-preserving prediction markets.',
     siteName: 'Mohammad Keshtkar',
     images: [
       {
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Mohammad Keshtkar — Founder building privacy-preserving verification',
-    description: 'Technical founder with EPO patent. Building Prizely, AnyBet, VetCast, and privacy-preserving prediction markets.',
+    description: 'Technical founder with EPO patent. Building Prizely, TrustPeer, AnyBet, and privacy-preserving prediction markets.',
     creator: '@perblock_io',
     images: ['/og-default.png'],
   },

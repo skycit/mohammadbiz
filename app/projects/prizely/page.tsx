@@ -593,12 +593,12 @@ export default function PrizelyPage() {
                   </p>
                 </Link>
                 <Link
-                  href="/projects/vetcast"
+                  href="/projects/trustpeer"
                   className="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-200 hover:shadow-md transition-all"
                 >
-                  <h3 className="font-semibold text-gray-900">VetCast</h3>
+                  <h3 className="font-semibold text-gray-900">TrustPeer</h3>
                   <p className="text-gray-600 text-sm mt-1">
-                    AI assistant for filtering connection requests
+                    AI-matched, pay-to-connect platform for the creator economy
                   </p>
                 </Link>
               </div>
