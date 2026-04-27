@@ -45,10 +45,12 @@ export function PersonJsonLd() {
       '@type': 'CollegeOrUniversity',
       name: 'Imperial College London',
     },
-    worksFor: {
-      '@type': 'Organization',
-      name: 'PerBlock',
-    },
+    worksFor: [
+      { '@type': 'Organization', name: 'Prizely', url: 'https://www.prizelyapp.com' },
+      { '@type': 'Organization', name: 'TrustPeer', url: 'https://trustpeer.io' },
+      { '@type': 'Organization', name: 'AnyBet', url: 'https://anybet.ai' },
+      { '@type': 'Organization', name: 'PerBlock' },
+    ],
   };
 
   return <JsonLdScript id="person-jsonld" data={schema} />;
@@ -118,4 +120,24 @@ export function ProjectJsonLd({ name, url, description, applicationCategory, key
   };
 
   return <JsonLdScript id={`project-${name.toLowerCase().replace(/\s+/g, '-')}-jsonld`} data={schema} />;
+}
+
+interface BreadcrumbListJsonLdProps {
+  items: { name: string; url: string }[];
+}
+
+export function BreadcrumbListJsonLd({ items }: BreadcrumbListJsonLdProps) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
+  const id = `breadcrumb-${items[items.length - 1]?.name.toLowerCase().replace(/\s+/g, '-') ?? 'jsonld'}-jsonld`;
+  return <JsonLdScript id={id} data={schema} />;
 }

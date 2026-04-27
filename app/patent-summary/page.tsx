@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft, ShieldCheck, CheckCircle, Globe, Lock, Mail } from 'lucide-react';
 import { patentContent, siteConfig } from '@/content/site';
+import { BreadcrumbListJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
 
 export default function PatentSummary() {
   return (
+    <>
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://mohammad.biz' },
+          { name: 'Patent Summary', url: 'https://mohammad.biz/patent-summary' },
+        ]}
+      />
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-indigo-50">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <Link
@@ -152,5 +160,6 @@ export default function PatentSummary() {
         </div>
       </div>
     </div>
+    </>
   );
 }

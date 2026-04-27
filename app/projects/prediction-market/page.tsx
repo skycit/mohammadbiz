@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Shield, Lock, Users, Zap } from 'lucide-react';
-import { ProjectJsonLd } from '@/components/SeoJsonLd';
+import { ProjectJsonLd, BreadcrumbListJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -33,6 +33,13 @@ export default function PredictionMarketPage() {
         description="The first prediction market enabling anonymous eligibility verification without wallet linking, powered by EPO-confirmed patent technology."
         applicationCategory="FinanceApplication"
         keywords={['prediction market', 'privacy', 'blockchain', 'zero-knowledge', 'anonymous verification', 'EPO patent']}
+      />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://mohammad.biz' },
+          { name: 'Projects', url: 'https://mohammad.biz/#projects' },
+          { name: 'Privacy-Preserving Prediction Market', url: 'https://mohammad.biz/projects/prediction-market' },
+        ]}
       />
       
       <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-indigo-50">

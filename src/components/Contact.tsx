@@ -114,7 +114,7 @@ export default function Contact() {
                 <a
                   href={contactContent.social.linkedin}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="me noopener"
                   className="p-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                 >
                   <Linkedin size={24} />
@@ -124,7 +124,7 @@ export default function Contact() {
                 <a
                   href={contactContent.social.twitter}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="me noopener"
                   className="p-3 text-gray-600 hover:text-sky-500 hover:bg-sky-50 rounded-lg transition-colors"
                 >
                   <Twitter size={24} />
