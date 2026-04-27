@@ -550,17 +550,19 @@ export default function PrizelyPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="mailto:hello@mohammad.biz?subject=Prizely Demo Request"
+                    href="https://prizelyapp.com"
+                    target="_blank"
+                    rel="noreferrer"
                     className="px-6 py-3 bg-amber-400 text-slate-900 rounded-lg font-semibold hover:bg-amber-300 transition-colors inline-flex items-center justify-center gap-2"
                   >
-                    Request a demo
+                    Visit Prizely
                     <ArrowRight size={18} />
                   </a>
                   <a
-                    href="mailto:hello@mohammad.biz?subject=Prizely Partnership Inquiry"
+                    href="mailto:hello@mohammad.biz?subject=Prizely Demo Request"
                     className="px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors text-center"
                   >
-                    Partner with us
+                    Request a demo
                   </a>
                 </div>
               </div>

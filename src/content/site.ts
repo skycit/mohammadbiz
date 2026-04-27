@@ -152,8 +152,8 @@ export const projects = [
     tags: ['Prize draws', 'QR scanning', 'iOS native app', 'Hospitality', 'Brand campaigns', 'Blockchain ledger'],
     screenshot: '/prizely1.png',
     screenshotAlt: 'Prizely marketing platform hero showing a Heineken £500 prize pool campaign — phone mockup with QR redemption screen on a deep navy gradient with gold typography',
-    url: null,
-    ctaPrimary: { label: 'Request a demo', href: '#contact', subject: 'Prizely Demo Request' },
+    url: 'https://prizelyapp.com',
+    ctaPrimary: { label: 'Visit Prizely', href: 'https://prizelyapp.com', external: true },
     ctaSecondary: { label: 'Ask about the build', href: '#contact', subject: 'Prizely Questions' },
   },
 ];
