@@ -215,9 +215,9 @@ export default function VetcastPage() {
                   <h3 className="font-semibold text-gray-900">AnyBet</h3>
                   <p className="text-gray-600 text-sm mt-1">Risk-free sports betting for learning</p>
                 </Link>
-                <Link href="/projects/tastypot" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
-                  <h3 className="font-semibold text-gray-900">TastyPot</h3>
-                  <p className="text-gray-600 text-sm mt-1">Community pool rewards for hospitality</p>
+                <Link href="/projects/prizely" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-purple-200 hover:shadow-md transition-all">
+                  <h3 className="font-semibold text-gray-900">Prizely</h3>
+                  <p className="text-gray-600 text-sm mt-1">QR-powered prize-draw marketing for venues &amp; brands</p>
                 </Link>
               </div>
             </section>
