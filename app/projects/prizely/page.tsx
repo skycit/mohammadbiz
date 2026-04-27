@@ -23,24 +23,24 @@ import { ProjectJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Prizely — QR-Powered Prize-Draw Marketing for Venues & Brands',
+  title: 'Prizely — Blockchain- and AI-Powered Engagement for Venues & Brands',
   description:
-    'Prizely turns every receipt into a prize-draw entry. Brands and venues fund cash prize pools; customers scan a QR code, upload their receipt, and enter a fully-funded draw — all tracked on a public, blockchain-backed transparency ledger.',
+    'Prizely is a blockchain- and AI-powered engagement platform reshaping marketing and entertainment for hospitality. Sponsor-funded cash prize draws turn real in-venue spend into transparent, independently verifiable rewards for real customers.',
   alternates: {
     canonical: '/projects/prizely',
   },
   openGraph: {
-    title: 'Prizely — QR-Powered Prize-Draw Marketing',
+    title: 'Prizely — Blockchain- and AI-Powered Engagement for Venues & Brands',
     description:
-      'Brand-funded prize pools that activate customers at the moment of purchase. iOS native app with QR receipt verification and a public ledger.',
+      'A platform that turns real in-venue spend into sponsor-funded cash prize draws — combining blockchain-grade transparency with AI-driven engagement for hospitality.',
     url: 'https://mohammad.biz/projects/prizely',
     images: ['/prizely1.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prizely — QR-Powered Prize-Draw Marketing',
+    title: 'Prizely — Blockchain- and AI-Powered Engagement for Venues & Brands',
     description:
-      'Brand-funded prize pools that activate customers at the moment of purchase. iOS native app with QR receipt verification and a public ledger.',
+      'A platform that turns real in-venue spend into sponsor-funded cash prize draws — combining blockchain-grade transparency with AI-driven engagement for hospitality.',
     images: ['/prizely1.png'],
   },
 };
@@ -51,17 +51,17 @@ export default function PrizelyPage() {
       <ProjectJsonLd
         name="Prizely"
         url="https://mohammad.biz/projects/prizely"
-        description="QR-powered prize-draw marketing for UK venues and brand sponsors. Customers scan a QR code, upload a receipt, earn Local Points, and enter a fully-funded cash draw — backed by a public blockchain transparency ledger."
+        description="Blockchain- and AI-powered engagement platform reshaping marketing and entertainment for hospitality. Sponsor-funded cash prize draws turn real in-venue spend into transparent, independently verifiable rewards for real customers — backed by a public blockchain ledger."
         applicationCategory="LifestyleApplication"
         keywords={[
+          'blockchain marketing',
+          'AI engagement',
           'prize draw',
-          'QR scanning',
           'iOS app',
-          'hospitality marketing',
+          'hospitality engagement',
           'brand sponsorship',
-          'receipt verification',
+          'transparency ledger',
           'loyalty platform',
-          'blockchain ledger',
           'venue marketing',
         ]}
       />
@@ -88,11 +88,13 @@ export default function PrizelyPage() {
           </div>
 
           <p className="text-lg text-gray-600 mb-10 max-w-3xl leading-relaxed">
-            Prizely is a QR-powered prize-draw marketing platform for UK venues — pubs, bars,
-            cafés, restaurants — and the brands that want to reach their customers. Brands and
-            venues fund real cash prize pools; customers scan a QR code in-store, upload their
-            receipt, and enter a fully-funded draw. Every ticket, every draw, every winner is
-            recorded on a public, blockchain-backed transparency ledger.
+            Prizely is a blockchain- and AI-powered engagement platform reshaping marketing and
+            entertainment for hospitality — UK pubs, bars, cafés, restaurants, and the brands
+            that sponsor them. Instead of paying for ad impressions that never translate into
+            footfall, sponsors fund real cash prize pools that activate real customers at the
+            moment of purchase. Every ticket, every draw, every winner is recorded on a public,
+            blockchain-backed ledger so participants and sponsors alike can independently
+            verify the result.
           </p>
 
           {/* Hero image */}

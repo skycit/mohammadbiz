@@ -142,7 +142,7 @@ export const projects = [
   {
     id: 'prizely',
     name: 'Prizely',
-    tagline: 'QR-powered prize-draw marketing for venues and brand sponsors — turning every receipt into a transparent, fully-funded cash draw entry.',
+    tagline: 'A blockchain- and AI-powered engagement platform reshaping marketing and entertainment for hospitality — sponsor-funded cash prize draws that turn real in-venue spend into transparent, independently verifiable rewards for real customers.',
     isFlagship: false,
     problem: 'Brands burn ad spend on impressions that never translate into in-venue visits, and venues struggle to make loyalty feel exciting instead of transactional.',
     approach: 'Brands and venues fund real cash prize pools. Customers scan a QR code in-store, upload their receipt, earn Local Points (1 LP per £1), and convert them into tickets for the draw — fully free for the customer, fully attributable for the sponsor.',
@@ -204,7 +204,7 @@ export const faqContent = [
   },
   {
     question: 'What is Prizely and how do its prize draws work?',
-    answer: 'Prizely is a QR-powered prize-draw marketing platform for UK venues — pubs, bars, cafés, restaurants — and the brands that want to reach their customers. Brands and venues fund a real cash prize pool. After making a purchase, customers scan the venue\'s QR code in the Prizely iOS app, upload their receipt, and earn Local Points at a rate of 1 LP per £1 spent. Ten LP converts into one entry ticket for that venue\'s active prize draw. Customers never pay money — the prize pot is funded entirely by sponsors. Every ticket entry, draw, and winner is recorded on a public blockchain-backed ledger so participants can verify the result themselves.',
+    answer: 'Prizely is a blockchain- and AI-powered engagement platform reshaping marketing and entertainment for hospitality. UK venues — pubs, bars, cafés, restaurants — and the brands that sponsor them fund real cash prize pools that activate real customers at the moment of purchase. After buying something at a partner venue, customers verify the visit in the Prizely iOS app, upload their receipt, and earn Local Points at a rate of 1 LP per £1 spent; ten LP converts into one entry ticket for that venue\'s active prize draw. Customers never pay money — the prize pot is funded entirely by sponsors. Every ticket entry, draw, and winner is recorded on a public, blockchain-backed ledger so participants and sponsors alike can independently verify the result.',
   },
   {
     question: 'How does AnyBet work without real money?',
