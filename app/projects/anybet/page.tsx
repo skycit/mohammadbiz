@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     title: 'AnyBet — Risk-Free Sports Betting Platform',
     description: 'Free sports betting with live odds and virtual tokens. Learn and compete without deposits.',
     url: 'https://mohammad.biz/projects/anybet',
-    images: ['/og-anybet.png'],
+    images: ['/anybet-new.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AnyBet — Risk-Free Sports Betting',
     description: 'Free sports betting with live odds and virtual tokens. Learn and compete without deposits.',
-    images: ['/og-anybet.png'],
+    images: ['/anybet-new.jpg'],
   },
 };
 
