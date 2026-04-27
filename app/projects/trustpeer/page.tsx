@@ -20,7 +20,7 @@ import {
   Eye,
   EyeOff,
 } from 'lucide-react';
-import { ProjectJsonLd } from '@/components/SeoJsonLd';
+import { ProjectJsonLd, BreadcrumbListJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -66,6 +66,13 @@ export default function TrustpeerPage() {
           'iOS app',
           'Flutter',
           'Laravel API',
+        ]}
+      />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://mohammad.biz' },
+          { name: 'Projects', url: 'https://mohammad.biz/#projects' },
+          { name: 'TrustPeer', url: 'https://mohammad.biz/projects/trustpeer' },
         ]}
       />
 
@@ -503,7 +510,7 @@ export default function TrustpeerPage() {
                   <a
                     href="https://trustpeer.io"
                     target="_blank"
-                    rel="noopener"
+                    rel="me noopener"
                     className="px-6 py-3 bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-400 text-white rounded-lg font-semibold hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
                   >
                     Visit TrustPeer

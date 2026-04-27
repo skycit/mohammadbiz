@@ -19,7 +19,7 @@ import {
   Apple,
   TrendingUp,
 } from 'lucide-react';
-import { ProjectJsonLd } from '@/components/SeoJsonLd';
+import { ProjectJsonLd, BreadcrumbListJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -64,6 +64,13 @@ export default function PrizelyPage() {
           'transparency ledger',
           'loyalty platform',
           'venue marketing',
+        ]}
+      />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://mohammad.biz' },
+          { name: 'Projects', url: 'https://mohammad.biz/#projects' },
+          { name: 'Prizely', url: 'https://mohammad.biz/projects/prizely' },
         ]}
       />
 
@@ -555,7 +562,7 @@ export default function PrizelyPage() {
                   <a
                     href="https://www.prizelyapp.com"
                     target="_blank"
-                    rel="noopener"
+                    rel="me noopener"
                     className="px-6 py-3 bg-amber-400 text-slate-900 rounded-lg font-semibold hover:bg-amber-300 transition-colors inline-flex items-center justify-center gap-2"
                   >
                     Visit Prizely
