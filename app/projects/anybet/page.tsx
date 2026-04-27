@@ -30,6 +30,7 @@ export default function AnybetPage() {
       <ProjectJsonLd
         name="AnyBet"
         url="https://anybet.ai"
+        sameAs={['https://mohammad.biz/projects/anybet']}
         description="A free online sports betting experience with live odds, virtual tokens, and competitive leaderboards — no deposits required."
         applicationCategory="GameApplication"
         keywords={['sports betting', 'virtual betting', 'live odds', 'leaderboard', 'free betting', 'sports prediction']}
@@ -165,7 +166,7 @@ export default function AnybetPage() {
                 <a
                   href="https://anybet.ai"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
                   className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
                 >
                   Visit AnyBet

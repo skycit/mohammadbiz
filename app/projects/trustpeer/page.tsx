@@ -51,7 +51,8 @@ export default function TrustpeerPage() {
     <>
       <ProjectJsonLd
         name="TrustPeer"
-        url="https://mohammad.biz/projects/trustpeer"
+        url="https://trustpeer.io"
+        sameAs={['https://mohammad.biz/projects/trustpeer']}
         description="AI-matched, pay-to-connect platform for verified influencers. DeepScore compatibility preview before payment, 30-day private chats on accepted requests, auto-refund after 7 days of inactivity, and a Vouch tipping mechanic with public/private modes."
         applicationCategory="SocialNetworkingApplication"
         keywords={[

@@ -97,9 +97,10 @@ interface ProjectJsonLdProps {
   description: string;
   applicationCategory: string;
   keywords: string[];
+  sameAs?: string[];
 }
 
-export function ProjectJsonLd({ name, url, description, applicationCategory, keywords }: ProjectJsonLdProps) {
+export function ProjectJsonLd({ name, url, description, applicationCategory, keywords, sameAs }: ProjectJsonLdProps) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -108,6 +109,7 @@ export function ProjectJsonLd({ name, url, description, applicationCategory, key
     description,
     applicationCategory,
     keywords: keywords.join(', '),
+    ...(sameAs && sameAs.length > 0 && { sameAs }),
     author: {
       '@type': 'Person',
       name: 'Mohammad Keshtkar',

@@ -50,7 +50,8 @@ export default function PrizelyPage() {
     <>
       <ProjectJsonLd
         name="Prizely"
-        url="https://mohammad.biz/projects/prizely"
+        url="https://www.prizelyapp.com"
+        sameAs={['https://mohammad.biz/projects/prizely']}
         description="Blockchain- and AI-powered engagement platform reshaping marketing and entertainment for hospitality. Sponsor-funded cash prize draws turn real in-venue spend into transparent, independently verifiable rewards for real customers — backed by a public blockchain ledger."
         applicationCategory="LifestyleApplication"
         keywords={[
@@ -552,9 +553,9 @@ export default function PrizelyPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://prizelyapp.com"
+                    href="https://www.prizelyapp.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener"
                     className="px-6 py-3 bg-amber-400 text-slate-900 rounded-lg font-semibold hover:bg-amber-300 transition-colors inline-flex items-center justify-center gap-2"
                   >
                     Visit Prizely
