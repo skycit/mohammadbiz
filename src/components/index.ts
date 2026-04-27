@@ -7,4 +7,4 @@ export { default as NowLookingFor } from './NowLookingFor';
 export { default as Contact } from './Contact';
 export { default as FAQ } from './FAQ';
 export { default as VisitorCounter } from './VisitorCounter';
-export { PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd, ProjectJsonLd } from './SeoJsonLd';
+export { PersonJsonLd, WebSiteJsonLd, ProfilePageJsonLd, ProjectJsonLd, BreadcrumbListJsonLd } from './SeoJsonLd';
