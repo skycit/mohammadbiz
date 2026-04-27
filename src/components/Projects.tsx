@@ -124,7 +124,7 @@ export default function Projects() {
                           <a
                             href={project.url}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="me noopener"
                             className="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1"
                           >
                             {new URL(project.url).hostname}
@@ -154,7 +154,7 @@ export default function Projects() {
                           <a
                             href={project.ctaPrimary.href}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="me noopener"
                             className="px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
                           >
                             {project.ctaPrimary.label}

@@ -25,20 +25,33 @@ the architecture without a clear reason.
 - React Compiler enabled (`babel-plugin-react-compiler`)
 
 ## Hosting & deployment
-**The site deploys via Netlify**, not Vercel. See `netlify.toml`:
-- `@netlify/plugin-nextjs` runs `npm run build` and publishes `.next/`
-- `www.mohammad.biz` → `mohammad.biz` (301 redirect)
-- Trailing slashes stripped (`/foo/` → `/foo`, 301)
-- Security headers: `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`,
-  `Referrer-Policy: strict-origin-when-cross-origin`, `X-Robots-Tag: index, follow`
+**The site deploys via Vercel.** Verified by the `server: Vercel` and
+`x-nextjs-prerender` response headers on the live site. Earlier versions
+of this file mis-stated Netlify because of a leftover `netlify.toml`
+that has since been removed.
 
-### Do NOT add Vercel SDKs
-`@vercel/analytics` and `@vercel/speed-insights` only collect data on
-Vercel deployments. On a Netlify-hosted site they are dead weight.
-The Vercel GitHub App may auto-open draft PRs suggesting them — close
-those PRs. If web analytics are needed on Netlify, use Netlify Analytics
-(server-side, no SDK) or a privacy-friendly tool (Plausible, Umami,
-Fathom). Do not add them yourself without the user's explicit go-ahead.
+- Production deploys are triggered by pushes to `main`.
+- Pull requests get an automatic Vercel preview deployment — use it
+  to eyeball changes before merging.
+- HTTPS, HSTS, and Vercel's default security headers are applied at
+  the edge. There is no per-route header config in this repo (no
+  `vercel.json`).
+
+### Analytics — optional, not currently wired up
+Because the site is on Vercel, `@vercel/analytics` and
+`@vercel/speed-insights` *would* work if added. Neither is currently
+installed. The Vercel GitHub App sometimes auto-opens draft PRs
+suggesting them — they are safe to merge if (and only if) analytics
+are actually wanted. Options:
+- **Vercel Speed Insights** — Core Web Vitals tracking, free tier.
+- **Vercel Analytics** — page-view + visitor analytics, paid.
+- **Privacy-friendly alternatives** — Plausible, Umami, Fathom; all
+  fine on Vercel and avoid vendor lock-in.
+
+The repo already has a custom visitor counter at `/api/visitor-count`
+backed by Upstash Redis (see below). That counter is purpose-built for
+the footer count widget — it is NOT a replacement for a real analytics
+tool.
 
 ## Project folder structure
 ```
@@ -53,7 +66,7 @@ app/                      Next.js App Router (routes live at the repo root)
     anybet/page.tsx
     prediction-market/page.tsx       (route slug for the "flagship" id)
     prizely/page.tsx
-    vetcast/page.tsx
+    trustpeer/page.tsx
   api/visitor-count/route.ts         Visitor counter API (Upstash Redis)
 
 src/
@@ -77,10 +90,10 @@ public/                   Static assets (images, SVGs, OG defaults, robots fallb
   home-screen-mobile.png       Project mobile screenshot (Prizely)
   profile-user-screen.png      Project mobile screenshot (Prizely)
   anybet-new.jpg               Project hero image (AnyBet)
-  vetcast-new.jpg              Project hero image (VetCast)
+  trustpeer-web.png            Project hero image (TrustPeer website)
+  trustpeer-mobile.png         Project mobile screenshot (TrustPeer iOS app)
   projects/                    Reserved for project-specific extras
 
-netlify.toml              Build config + redirects + security headers
 next.config.ts            Next.js config (kept minimal)
 postcss.config.mjs        Tailwind v4 postcss plugin
 eslint.config.mjs         ESLint flat config
@@ -227,7 +240,7 @@ each project page.
   with a subtle inner gradient ring.
 - **Project-specific accents**:
   - AnyBet: `blue-600` / `cyan-500`
-  - VetCast: indigo / purple
+  - TrustPeer: `cyan-400` → `indigo-500` → `fuchsia-500` gradient
   - Prizely: `amber-400` / `amber-600` / `slate-900` / `amber-950` (gold + navy)
   - Each project's case study uses its own accent for chips, icons, buttons.
 
@@ -252,8 +265,9 @@ Don't import the entire library — Tree-shaking handles individual imports.
 
 ## Absolute rules
 
-1. **Hosting is Netlify.** Don't add Vercel SDKs. Don't suggest moving
-   to Vercel without an explicit ask.
+1. **Hosting is Vercel.** `@vercel/analytics` and `@vercel/speed-insights`
+   work here if you want to add them, but neither is required and adding
+   them is a deliberate decision (see Hosting section above).
 2. **Don't flatten the modular architecture.** `app/page.tsx` should
    stay a short composition of `<Section />` components — never a
    monolithic file with 500+ lines of inline JSX. If a section needs
@@ -280,7 +294,7 @@ Don't import the entire library — Tree-shaking handles individual imports.
     the visitor counter is a comment-worthy decision.
 12. **Don't commit `.env`** (it's in `.gitignore`). Use `.env.example`
     as the template.
-13. **PRs over direct pushes to `main`.** Netlify creates a deploy
+13. **PRs over direct pushes to `main`.** Vercel creates a deploy
     preview for PRs — use it to eyeball changes before merging.
     Direct push to `main` triggers a production deploy with no preview.
 
@@ -310,8 +324,9 @@ hydration guard. It is intentional — leave it alone unless you're
 specifically refactoring the visitor counter.
 
 ### Trailing slashes
-Netlify strips trailing slashes via 301. Always link to `/projects/foo`,
-never `/projects/foo/`. Same for `<Link href="...">` — no trailing slash.
+Vercel's default behaviour normalises trailing slashes. Always link to
+`/projects/foo`, never `/projects/foo/`. Same for `<Link href="...">` —
+no trailing slash.
 
 ### EPO patent context
 The site's headline narrative is "founder with EPO-confirmed patent for
@@ -339,7 +354,7 @@ should be generated:
 /projects/anybet        (static)
 /projects/prediction-market   (static)
 /projects/prizely       (static)
-/projects/vetcast       (static)
+/projects/trustpeer     (static)
 /robots.txt             (static)
 /sitemap.xml            (static)
 ```
@@ -355,7 +370,8 @@ Optional (used by metadata):
 - `NEXT_PUBLIC_GOOGLE_VERIFICATION` — Google Search Console verification
 - `NEXT_PUBLIC_BING_VERIFICATION` — Bing webmaster verification
 
-For Netlify, set these in **Site settings → Environment variables**.
+For Vercel, set these in **Project → Settings → Environment Variables**
+(scope them to Production + Preview).
 The visitor counter falls back gracefully (returns the 1000 floor) if
 Upstash isn't configured, so missing env vars won't break the build.
 
@@ -370,6 +386,6 @@ Upstash isn't configured, so missing env vars won't break the build.
 
 ## Related projects
 This is a **monorepo of one** — only this site lives here. The actual
-products referenced on the page (Prizely, AnyBet, VetCast, the
+products referenced on the page (Prizely, TrustPeer, AnyBet, the
 prediction market) live in separate repos. Don't try to reach them from
 this codebase.

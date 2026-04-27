@@ -19,7 +19,7 @@ import {
   Apple,
   TrendingUp,
 } from 'lucide-react';
-import { ProjectJsonLd } from '@/components/SeoJsonLd';
+import { ProjectJsonLd, BreadcrumbListJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -50,7 +50,8 @@ export default function PrizelyPage() {
     <>
       <ProjectJsonLd
         name="Prizely"
-        url="https://mohammad.biz/projects/prizely"
+        url="https://www.prizelyapp.com"
+        sameAs={['https://mohammad.biz/projects/prizely']}
         description="Blockchain- and AI-powered engagement platform reshaping marketing and entertainment for hospitality. Sponsor-funded cash prize draws turn real in-venue spend into transparent, independently verifiable rewards for real customers — backed by a public blockchain ledger."
         applicationCategory="LifestyleApplication"
         keywords={[
@@ -63,6 +64,13 @@ export default function PrizelyPage() {
           'transparency ledger',
           'loyalty platform',
           'venue marketing',
+        ]}
+      />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://mohammad.biz' },
+          { name: 'Projects', url: 'https://mohammad.biz/#projects' },
+          { name: 'Prizely', url: 'https://mohammad.biz/projects/prizely' },
         ]}
       />
 
@@ -552,9 +560,9 @@ export default function PrizelyPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://prizelyapp.com"
+                    href="https://www.prizelyapp.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="me noopener"
                     className="px-6 py-3 bg-amber-400 text-slate-900 rounded-lg font-semibold hover:bg-amber-300 transition-colors inline-flex items-center justify-center gap-2"
                   >
                     Visit Prizely
@@ -593,12 +601,12 @@ export default function PrizelyPage() {
                   </p>
                 </Link>
                 <Link
-                  href="/projects/vetcast"
+                  href="/projects/trustpeer"
                   className="bg-white rounded-xl p-4 border border-gray-200 hover:border-amber-200 hover:shadow-md transition-all"
                 >
-                  <h3 className="font-semibold text-gray-900">VetCast</h3>
+                  <h3 className="font-semibold text-gray-900">TrustPeer</h3>
                   <p className="text-gray-600 text-sm mt-1">
-                    AI assistant for filtering connection requests
+                    AI-matched, pay-to-connect platform for the creator economy
                   </p>
                 </Link>
               </div>

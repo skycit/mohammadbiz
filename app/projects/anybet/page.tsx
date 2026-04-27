@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, TrendingUp, Trophy, Zap, Globe } from 'lucide-react';
-import { ProjectJsonLd } from '@/components/SeoJsonLd';
+import { ProjectJsonLd, BreadcrumbListJsonLd } from '@/components/SeoJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     title: 'AnyBet — Risk-Free Sports Betting Platform',
     description: 'Free sports betting with live odds and virtual tokens. Learn and compete without deposits.',
     url: 'https://mohammad.biz/projects/anybet',
-    images: ['/og-anybet.png'],
+    images: ['/anybet-new.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AnyBet — Risk-Free Sports Betting',
     description: 'Free sports betting with live odds and virtual tokens. Learn and compete without deposits.',
-    images: ['/og-anybet.png'],
+    images: ['/anybet-new.jpg'],
   },
 };
 
@@ -30,9 +30,17 @@ export default function AnybetPage() {
       <ProjectJsonLd
         name="AnyBet"
         url="https://anybet.ai"
+        sameAs={['https://mohammad.biz/projects/anybet']}
         description="A free online sports betting experience with live odds, virtual tokens, and competitive leaderboards — no deposits required."
         applicationCategory="GameApplication"
         keywords={['sports betting', 'virtual betting', 'live odds', 'leaderboard', 'free betting', 'sports prediction']}
+      />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://mohammad.biz' },
+          { name: 'Projects', url: 'https://mohammad.biz/#projects' },
+          { name: 'AnyBet', url: 'https://mohammad.biz/projects/anybet' },
+        ]}
       />
       
       <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-indigo-50">
@@ -165,7 +173,7 @@ export default function AnybetPage() {
                 <a
                   href="https://anybet.ai"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="me noopener"
                   className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
                 >
                   Visit AnyBet
@@ -188,9 +196,9 @@ export default function AnybetPage() {
                   <h3 className="font-semibold text-gray-900">Prediction Market</h3>
                   <p className="text-gray-600 text-sm mt-1">Privacy-preserving prediction platform</p>
                 </Link>
-                <Link href="/projects/vetcast" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all">
-                  <h3 className="font-semibold text-gray-900">VetCast</h3>
-                  <p className="text-gray-600 text-sm mt-1">AI assistant for filtering connection requests</p>
+                <Link href="/projects/trustpeer" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all">
+                  <h3 className="font-semibold text-gray-900">TrustPeer</h3>
+                  <p className="text-gray-600 text-sm mt-1">AI-matched, pay-to-connect platform for the creator economy</p>
                 </Link>
                 <Link href="/projects/prizely" className="bg-white rounded-xl p-4 border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all">
                   <h3 className="font-semibold text-gray-900">Prizely</h3>
